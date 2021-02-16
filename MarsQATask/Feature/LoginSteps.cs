@@ -1,5 +1,9 @@
-﻿using OpenQA.Selenium;
+﻿using MarsQAtask.Page;
+using NUnit.Framework;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using System;
+using System.Threading;
 using TechTalk.SpecFlow;
 
 namespace MarsQATask.Feature
@@ -7,64 +11,39 @@ namespace MarsQATask.Feature
     [Binding]
     public class LoginSteps
     {
-        String test_url = "http://localhost:5000";
-        IWebDriver driver;
+        readonly IWebDriver driver = new ChromeDriver();
 
-        [Given(@"Navigate to Given URL")]
+
+        [Given(@"Navigate to given URL")]
         public void GivenNavigateToGivenURL()
         {
-            driver = new FirefoxDriver();
-            driver.Url = test_url;
-            driver.Manage().Window.Maximize();
-            System.Threading.Thread.Sleep(2000);
+            //navigate to the Url
+            driver.Navigate().GoToUrl("http://localhost:5000");
         }
         
-        [Given(@"Navigate to the Login page")]
-        public void GivenNavigateToTheLoginPage()
+        [Given(@"click sign in to open login")]
+        public void GivenClickSignInToOpenLogin()
         {
-            
+            //go to LoginPage 
+            var loginPage = new LoginPage(driver);
+            loginPage.Login();
         }
         
         [When(@"Login with valid Username,Password")]
         public void WhenLoginWithValidUsernamePassword()
         {
-            
-        }
-        
-        [When(@"Login with invalid Username,password")]
-        public void WhenLoginWithInvalidUsernamePassword()
-        {
-            
-        }
-        
-        [Then(@"user create an account with valid details")]
-        public void ThenUserCreateAnAccountWithValidDetails()
-        {
            
         }
         
-        [Then(@"User should be sign in")]
-        public void ThenUserShouldBeSignIn()
+        [When(@"verify user name should be seen on the profilePage")]
+        public void WhenVerifyUserNameShouldBeSeenOnTheProfilePage()
         {
-            
-        }
-        
-        [Then(@"seller Name should be seen on the profile Page")]
-        public void ThenSellerNameShouldBeSeenOnTheProfilePage()
-        {
-            
-        }
-        
-        [Then(@"User Should not able to sign in")]
-        public void ThenUserShouldNotAbleToSignIn()
-        {
-            
-        }
-        
-        [Then(@"shows error message")]
-        public void ThenShowsErrorMessage()
-        {
-         
+            //verify name on profile page
+            Thread.Sleep(3000);
+            var isnamepresent = driver.FindElement(By.XPath("//span[text()='shriya']"));
+            Assert.IsTrue(isnamepresent.Displayed, "the value for name is not present");
+            driver.Close();
+
         }
     }
 }
