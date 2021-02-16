@@ -28,7 +28,7 @@ namespace MarsQATask.Page
             langDetails.Click();
 
             //add first language
-            Thread.Sleep(5000);
+            Thread.Sleep(3000);
             driver.FindElement(By.XPath("//input[@placeholder='Add Language']")).SendKeys("English");
 
             driver.FindElement(By.XPath("//select/option[@value='Basic']")).Click();
@@ -36,7 +36,7 @@ namespace MarsQATask.Page
             driver.FindElement(By.XPath("//input[@type='button' and @value='Add']")).Click();
 
             //click add new button to add second language
-            Thread.Sleep(5000);
+            Thread.Sleep(3000);
 
             driver.FindElement(By.XPath("//tr/th[text()='Language']//following-sibling::th/div[text()='Add New']")).Click();
 
@@ -48,16 +48,18 @@ namespace MarsQATask.Page
             driver.FindElement(By.XPath("//input[@type='button' and @value='Add']")).Click();
 
             //click add new button to add third language and then 'cancel'
-            Thread.Sleep(5000);
+            Thread.Sleep(3000);
 
            driver.FindElement(By.XPath("//tr/th[text()='Language']//following-sibling::th/div[text()='Add New']")).Click();
 
-            Thread.Sleep(5000);
+            Thread.Sleep(3000);
             driver.FindElement(By.XPath("//input[@placeholder='Add Language']")).SendKeys("Gujarati");
 
             driver.FindElement(By.XPath("//select/option[@value='Conversational']")).Click();
 
-            driver.FindElement(By.XPath("//input[@type='button' and @value='Cancel']")).Click();
+            driver.FindElement(By.XPath("//input[@type='button' and @value='Add']")).Click();
+
+   
 
 
 

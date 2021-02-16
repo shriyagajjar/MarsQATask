@@ -28,7 +28,7 @@ namespace MarsQATask.Feature
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "Addlanguages.feature"
+#line 1 "Languages.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
@@ -114,25 +114,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("Choose Language Level and click \"Add\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 11
- testRunner.Then("language should be added and shown to profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 12
- testRunner.When("click \"Cancel\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 13
- testRunner.Then("written language should\'t be added and shown to profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 14
- testRunner.When("click on \"X\" icon to added languages", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 15
- testRunner.Then("it should be deleted from the languages", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 16
- testRunner.When("click on \"edit\" icon to added languages", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 17
- testRunner.Then("user should able to edit before added languges", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("verify that language to profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
