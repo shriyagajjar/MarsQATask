@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.5.4.32" />
     <PackageReference Include="Docker.DotNet" Version="3.125.4" />
     <PackageReference Include="NUnit" Version="3.12.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
@@ -14,6 +15,7 @@
     <PackageReference Include="Selenium.Support" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="88.0.4324.9600" />
+    <PackageReference Include="SpecFlow.Assist.Dynamic" Version="1.4.2" />
     <PackageReference Include="SpecFlow.NUnit" Version="3.6.23" />
   </ItemGroup>
 

@@ -20,23 +20,23 @@ namespace MarsQATask.Feature
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.6.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Login")]
-    public partial class LoginFeature
+    [NUnit.Framework.DescriptionAttribute("Share Skills")]
+    public partial class ShareSkillsFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "Login.feature"
+#line 1 "ShareSkills.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Feature", "Login", "In order to add my Profile Details\r\nAs a Seller I want to be able to login to pro" +
-                    "file ", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Feature", "Share Skills", "In order to add my Skill in Profile\r\nAs a User I want to be able to add Share Ski" +
+                    "lls details", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,11 +74,30 @@ namespace MarsQATask.Feature
             testRunner.CollectScenarioErrors();
         }
         
+        public virtual void FeatureBackground()
+        {
+#line 5
+#line hidden
+#line 6
+ testRunner.Given("User using the Chrome browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 7
+ testRunner.When("Useris  navigates to \"http://localhost:5000/Home\" url", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 8
+ testRunner.And("User is enter the valid login credentials \"shriya1.gajjar@gmail.com\" and \"Shriya@" +
+                    "2906\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 9
+ testRunner.Then("User able to log in to the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+        }
+        
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Login with valid Credentials")]
+        [NUnit.Framework.DescriptionAttribute("check user able to share skills")]
         [NUnit.Framework.CategoryAttribute("mytag")]
-        [NUnit.Framework.TestCaseAttribute("Shriya1.gajjar@gmail.com", "Shriya@2906", null)]
-        public virtual void LoginWithValidCredentials(string username, string password, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Testing", "Automation", "Programmimg & Tech", "QA", "QAAnalyst", "Hourly basis service", "Online", "Skill-exchange", "AutomationTesting", "Screenshot", "Active", null)]
+        public virtual void CheckUserAbleToShareSkills(string title, string description, string category, string subcategory, string tags, string serviceType, string locationType, string skillTrade, string skillExchange, string workSamples, string active, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "mytag"};
@@ -88,10 +107,19 @@ namespace MarsQATask.Feature
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Username", username);
-            argumentsOfScenario.Add("Password", password);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login with valid Credentials", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 6
+            argumentsOfScenario.Add("Title", title);
+            argumentsOfScenario.Add("Description", description);
+            argumentsOfScenario.Add("Category", category);
+            argumentsOfScenario.Add("Subcategory", subcategory);
+            argumentsOfScenario.Add("Tags", tags);
+            argumentsOfScenario.Add("ServiceType", serviceType);
+            argumentsOfScenario.Add("LocationType", locationType);
+            argumentsOfScenario.Add("SkillTrade", skillTrade);
+            argumentsOfScenario.Add("SkillExchange", skillExchange);
+            argumentsOfScenario.Add("WorkSamples", workSamples);
+            argumentsOfScenario.Add("Active", active);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("check user able to share skills", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 12
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -111,17 +139,20 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
- testRunner.Given("User is navigate the URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 5
+this.FeatureBackground();
 #line hidden
-#line 8
- testRunner.And("click on Sign in button to login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 13
+ testRunner.Given("User clicks on the Share Skill button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 9
- testRunner.When(string.Format("User enters {0} and {1}", username, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 14
+ testRunner.When(string.Format("User enter the details {0},{1},{2},{3},{4},{5},{6},{7},{8},{9} and {10}", title, description, category, subcategory, tags, serviceType, locationType, skillTrade, skillExchange, workSamples, active), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 10
- testRunner.Then("click on login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 15
+ testRunner.And("User entere Available Days", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 16
+ testRunner.Then("that Skills should be added to the Manage Listing page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
